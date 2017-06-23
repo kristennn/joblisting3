@@ -8,6 +8,7 @@
         <td>Description</td>
         <td>Created_at</td>
         <td>state</td>
+        <td>Resumes</td>
       </tr>
     </thead>
     <tbody>
@@ -24,6 +25,7 @@
               <%= link_to("hide", hide_admin_job_path(job), method: :post) %>
             <% end %>
           </td>
+          <td><%= link_to(job.resumes.count, admin_job_resumes_path(job)) %></td>
           <td>
             <%= link_to("Edit", edit_admin_job_path(job), class: "btn btn-sm btn-default") %>
             <%= link_to("Delete", admin_job_path(job), class: "btn btn-sm btn-default", method: :delete, data: {confirm: "Are you sure?"}) %>
