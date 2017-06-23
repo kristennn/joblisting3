@@ -3,7 +3,7 @@
   <hr>
   <%= simple_form_for [@job, @resume] do |f| %>
     <%= f.input :content, input_html: {class: "form-control"} %>
-    
+    <%= f.input :attachment %>
     <%= f.submit "Submit", class: "btn btn-primary" %>
   <% end %>
 
