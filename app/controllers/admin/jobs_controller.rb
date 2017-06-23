@@ -44,6 +44,18 @@ before_action :require_is_admin
     redirect_to admin_jobs_path
   end
 
+  def hide
+    @job = Job.find(params[:id])
+      @job.hide!
+      redirect_to :back
+  end
+
+  def public
+    @job = Job.find(params[:id])
+      @job.public!
+      redirect_to :back
+  end
+
   private
 
   def job_params

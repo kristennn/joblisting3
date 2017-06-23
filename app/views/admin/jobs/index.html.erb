@@ -7,6 +7,7 @@
         <td>Title</td>
         <td>Description</td>
         <td>Created_at</td>
+        <td>state</td>
       </tr>
     </thead>
     <tbody>
@@ -16,6 +17,13 @@
           <td><%= link_to(job.title, admin_job_path(job)) %></td>
           <td><%= job.description %></td>
           <td><%= job.created_at %></td>
+          <td>
+            <% if job.is_hidden %>
+              <%= link_to("public", public_admin_job_path(job), method: :post) %>
+            <% else %>
+              <%= link_to("hide", hide_admin_job_path(job), method: :post) %>
+            <% end %>
+          </td>
           <td>
             <%= link_to("Edit", edit_admin_job_path(job), class: "btn btn-sm btn-default") %>
             <%= link_to("Delete", admin_job_path(job), class: "btn btn-sm btn-default", method: :delete, data: {confirm: "Are you sure?"}) %>

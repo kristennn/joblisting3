@@ -7,4 +7,5 @@ class User < ApplicationRecord
     is_admin
   end
 
+
 end
